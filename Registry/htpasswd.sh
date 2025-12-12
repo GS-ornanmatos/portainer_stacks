@@ -1,6 +1,6 @@
-mkdir -p auth;
-
-# 2. Gera a senha para o Registry
+mkdir -p /opt/auth;
+cd /opt;
+# Gera a senha para o Registry
 docker run \
   --rm \
   --entrypoint htpasswd \
