@@ -4,4 +4,6 @@ cd /opt;
 docker run \
   --rm \
   --entrypoint htpasswd \
-  httpd:alpine -Bbn admin 321Mudar! > auth/htpasswd
+  httpd:alpine -Bbn admin 321Mudar! > auth/htpasswd;
+
+chmod 644 /opt/auth/htpasswd
