@@ -1,0 +1,19 @@
+- Habilitar:
+  - Websockets Suport
+
+Location /v2/
+Scheme:
+  - http
+Forward Hostname / IP:
+  - 172.17.0.1
+Forward Port:
+  - 5000
+
+Advanced:
+proxy_set_header Authorization $http_authorization;
+proxy_pass_header  Authorization;
+
+Custom Nginx Configuration:
+client_max_body_size 0;
+proxy_buffering off;
+
