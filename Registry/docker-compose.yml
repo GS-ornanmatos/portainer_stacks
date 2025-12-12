@@ -19,7 +19,7 @@ services:
       
       REGISTRY_STORAGE_DELETE_ENABLED: "true"
       
-      # Headers para a UI funcionar (CORS) - DOMÍNIO NOVO AQUI
+      # Headers para a UI funcionar (CORS) - DOMÍNIO
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-ORIGIN: '["https://registry.gs.ornan.dev"]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-METHODS: '[HEAD,GET,OPTIONS,DELETE]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-HEADERS: '[Authorization,Accept,Cache-Control]'
@@ -33,7 +33,7 @@ services:
       - "8080:80"
     environment:
       - REGISTRY_TITLE=Registry GiuSoft
-      # DOMÍNIO NOVO AQUI
+      # DOMÍNIO
       - REGISTRY_URL=https://registry.gs.ornan.dev
       - DELETE_IMAGES=true
       - SINGLE_REGISTRY=true
