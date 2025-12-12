@@ -10,7 +10,7 @@ services:
     volumes:
       - registry_data:/var/lib/registry
       # Arquivo de senha criado no host via script
-      - /opt/registry-auth:/opt/auth
+      - /opt/auth:/auth
     environment:
       # Autenticação
       REGISTRY_AUTH: htpasswd
