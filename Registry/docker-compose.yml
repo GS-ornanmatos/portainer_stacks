@@ -6,7 +6,8 @@ services:
     container_name: local-registry
     restart: always
     ports:
-      - "5000:5000"
+      - "127.0.0.1:5000:5000"
+    #  - "5000:5000"
     volumes:
       - registry_data:/var/lib/registry
       # Arquivo de senha criado no host via script
@@ -30,8 +31,8 @@ services:
     container_name: registry-ui
     restart: always
     ports:
-
-      - "8080:80"
+      - "127.0.0.1:8080:80"
+    # - "8080:80"
     environment:
       - REGISTRY_TITLE=Registry GiuSoft
       # DOMÍNIO
