@@ -7,9 +7,9 @@ services:
       - '80:80'   
       - '443:443' 
       - '81:81'   # Interface Web
-    dns:
-      - 1.1.1.1  
-      - 8.8.8.8  
+#    dns:
+#      - 1.1.1.1  
+#      - 8.8.8.8  
     volumes:
       - ./npm/data:/data
       - ./npm/letsencrypt:/etc/letsencrypt
