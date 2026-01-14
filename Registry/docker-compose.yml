@@ -34,7 +34,7 @@ services:
     environment:
       - REGISTRY_TITLE=Registry GiuSoft
       # DOMÍNIO
-      - REGISTRY_URL=https://registry.gs.ornan.dev
+      - REGISTRY_URL=https://registry.giusoft.com.br
       - DELETE_IMAGES=true
       - SINGLE_REGISTRY=true
     depends_on:
