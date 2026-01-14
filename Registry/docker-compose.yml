@@ -21,7 +21,7 @@ services:
       REGISTRY_STORAGE_DELETE_ENABLED: "true"
       
       # Headers para a UI funcionar (CORS) - DOMÍNIO
-      REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-ORIGIN: '["https://registry.gs.ornan.dev"]'
+      REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-ORIGIN: '["https://registry.giusoft.com.br"]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-METHODS: '[HEAD,GET,OPTIONS,DELETE]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-HEADERS: '[Authorization,Accept,Cache-Control]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-EXPOSE-HEADERS: '[Docker-Content-Digest]'
