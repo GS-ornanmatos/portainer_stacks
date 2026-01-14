@@ -1,11 +1,22 @@
+version: '3.8'
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '81:81'
-      - '443:443'
+      - '80:80'   
+      - '443:443' 
+      - '81:81'   # Interface Web
+    dns:
+      - 1.1.1.1  
+      - 8.8.8.8  
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - ./npm/data:/data
+      - ./npm/letsencrypt:/etc/letsencrypt
+    environment:
+      - DISABLE_IPV6=true  
+    networks:
+      - npm_network
+networks:
+  npm_network:
+    driver: bridge
