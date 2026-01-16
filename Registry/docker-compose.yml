@@ -24,6 +24,7 @@ services:
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-HEADERS: '[Authorization,Accept,Cache-Control,Content-Type,DNT,If-Modified-Since,Keep-Alive,Origin,User-Agent,X-Requested-With]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-EXPOSE-HEADERS: '[Docker-Content-Digest]'
       REGISTRY_HTTP_HEADERS_ACCESS-CONTROL-ALLOW-CREDENTIALS: '[true]'
+      REGISTRY_HTTP_SECRET: "LTqWqEDzqrHqgpZaTubt"
 
   registry-ui:
     image: joxit/docker-registry-ui:latest
