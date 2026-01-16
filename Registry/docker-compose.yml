@@ -13,6 +13,7 @@ services:
       - registry_data:/var/lib/registry
       - /opt/auth:/auth
     environment:
+      REGISTRY_HTTP_RELATIVEURLS: "true"
       REGISTRY_AUTH: htpasswd
       REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
       REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
