@@ -1,23 +1,47 @@
+Primeira:
+
 - Habilitar:
   - Websockets Suport
+- Forward Hostname / IP
+  - registry-ui
+- Forward Port
+  - 80
+
+######################################
+
+Segunda:
 
 Location /v2/
 Scheme:
   - http
 Forward Hostname / IP:
-  - 172.17.0.1
+  - local-registry
 Forward Port:
   - 5000
 
 Advanced:
-proxy_set_header Authorization $http_authorization;
-proxy_pass_header  Authorization;
 
-Custom Nginx Configuration:
+proxy_set_header X-Real-IP $remote_addr;
+proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+proxy_set_header X-Forwarded-Proto $scheme;
+
+proxy_set_header Authorization $http_authorization;
+proxy_pass_header Authorization;
+proxy_pass_header WWW-Authenticate;
+
+client_max_body_size 0;
+proxy_buffering off;
+proxy_request_buffering off;
+
+
+######################################
+
+Settings:
+
 client_max_body_size 0;
 proxy_buffering off;
 
-
+######################################
 
 Executar no host:
 echo "127.0.0.1 registry.giusoft.com.br" | sudo tee -a /etc/hosts
