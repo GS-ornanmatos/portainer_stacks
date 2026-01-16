@@ -17,6 +17,10 @@ services:
       - DISABLE_IPV6=true  
     networks:
       - npm_network
+      - app-net
+      # Adicionar redes dos apps
 networks:
   npm_network:
     driver: bridge
+  app-net:
+    external: true
