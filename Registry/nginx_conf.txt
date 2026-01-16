@@ -17,3 +17,7 @@ Custom Nginx Configuration:
 client_max_body_size 0;
 proxy_buffering off;
 
+
+
+Executar no host:
+echo "127.0.0.1 registry.giusoft.com.br" | sudo tee -a /etc/hosts
