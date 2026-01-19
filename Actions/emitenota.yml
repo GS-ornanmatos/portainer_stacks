@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  github-runner:
+    image: myoung34/github-runner:latest
+    container_name: emitenotas-runner
+    restart: always
+    environment:
+      - REPO_URL=${REPO_URL}
+      - RUNNER_TOKEN=${RUNNER_TOKEN}
+      - RUNNER_NAME=emitenotas-runner
+      - RUNNER_LABELS=self-hosted,linux,docker
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./runner-data:/data
+    
+    networks:
+      - app-net
+    extra_hosts:
+      - "registry.giusoft.com.br:host-gateway"
+
+networks:
+  app-net:
+    external: true
