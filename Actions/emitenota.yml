@@ -6,8 +6,8 @@ services:
     container_name: emitenotas-runner
     restart: always
     environment:
-      - REPO_URL=${REPO_URL}
-      - RUNNER_TOKEN=${RUNNER_TOKEN}
+      - REPO_URL=${EMITENOTA_URL}
+      - RUNNER_TOKEN=${EMITENOTA_RUNNER_TOKEN}
       - RUNNER_NAME=emitenotas-runner
       - RUNNER_LABELS=self-hosted,linux,docker
     volumes:
