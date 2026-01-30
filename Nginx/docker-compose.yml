@@ -1,23 +1,21 @@
+version: "3.9"
+
 services:
   app:
-    image: 'jc21/nginx-proxy-manager:latest'
+    image: jc21/nginx-proxy-manager:latest
     restart: unless-stopped
     ports:
-      - '80:80'   
-      - '443:443' 
-      - '81:81'   # Interface Web
-#    dns:
-#      - 1.1.1.1  
-#      - 8.8.8.8  
+      - "80:80"
+      - "443:443"
+      - "81:81"
     volumes:
       - /var/npm/data:/data
       - /var/npm/letsencrypt:/etc/letsencrypt
       - /var/npm/logs:/data/logs
     environment:
-      - DISABLE_IPV6=true  
+      - DISABLE_IPV6=true
     networks:
-      npm_network:
-        ipv4_address: 172.19.0.2
+      - npm_network
 
 networks:
   npm_network:
@@ -25,5 +23,3 @@ networks:
     ipam:
       config:
         - subnet: 172.19.0.0/16
-  app-net:
-    external: true
